@@ -1,0 +1,31 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+
+    <img src="/images/ArtStackicon.png" alt="Icon" class="icon">
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      
+      <ul class="navbar-nav me-auto">
+        <li><a class="nav-link" href="/">Home</a></li>
+        <li><a class="nav-link" href="/gallery">Gallery</a></li>
+        {{#if userSignIn }}
+        <li><a class="nav-link" href="/dashboard">Dashboard</a></li>
+        <li><a class="nav-link" href="/submit">Upload</a></li>
+        {{/if}}
+      </ul>
+
+      <ul class="navbar-nav">
+        {{#if userSignIn}}
+        <li><a class="nav-link" href="/logout">Logout</a></li>
+        {{else}}
+        <li><a class="nav-link" href="/register">Register</a></li>
+        <li><a class="nav-link" href="/login">Login</a></li>
+        {{/if}}
+      </ul>
+
+    </div>
+  </div>
+</nav>

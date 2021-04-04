@@ -1,0 +1,33 @@
+<h1 class="page-heading">Upload</h1>
+<br>
+<form id="uploadForm" class="row g-3">
+  <div class="form-floating mb-3">
+    <input type="text" required id="title" class="form-control" placeholder="placeholder" name="title">
+    <label class="floatingInput" for="title">Title</label>
+  </div>
+
+  <div class="form-floating mb-3">
+    <input type="text" required id="medium" class="form-control" placeholder="placeholder" name="medium">
+    <label class="floatingInput" for="medium">Medium</label>
+  </div>
+
+  <div class="form-floating mb-3">
+    <input type="text" required id="size" class="form-control" placeholder="placeholder" name="size">
+    <label class="floatingInput" for="size">Size</label>
+  </div>
+
+  <div class="form-floating mb-3">
+    <input type="number" required min="0.00" step=".01" id="price" class="form-control" placeholder="placeholder" name="price">
+    <label class="floatingInput" for="price">Price</label>
+  </div>
+
+  <div class="form-floating input-group mb-3" id="uploadButton">
+    <input type="text" readonly required id="imageUrl" class="form-control" name="imageUrl" >
+    <label class="floatingInput" for="imageUrl">Image File</label>
+    <button type="button" class="btn btn-outline-secondary imageBtn">Upload Image</button>
+  </div>
+
+  <div class="col-12 text-center">
+    <button type="submit" class="btn btn-outline-secondary">Submit</button>
+  </div>
+</form>

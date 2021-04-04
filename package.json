@@ -1,0 +1,38 @@
+{
+  "name": "art-stack",
+  "version": "1.0.0",
+  "description": "Art Stack provides an online gallery of artwork by community artists. It offers the opportunity for local artists to show their work despite pandemic-related closures, and offers the public the chance to see the extraordinary works of art being produced in our community with their safety and convenience in mind. ",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "npx eslint **/*.js",
+    "lint:fix": "npx eslint **/*.js --fix",
+    "watch": "nodemon",
+    "seed": "node seeds/seed.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TheTiiiim/art-stack.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TheTiiiim/art-stack/issues"
+  },
+  "homepage": "https://github.com/TheTiiiim/art-stack#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-handlebars": "^5.2.1",
+    "jsonwebtoken": "^8.5.1",
+    "mysql2": "^2.2.5",
+    "sequelize": "^6.6.1"
+  },
+  "devDependencies": {
+    "eslint": "^7.22.0",
+    "nodemon": "^2.0.7"
+  }
+}

@@ -1,0 +1,130 @@
+body {
+    background: linear-gradient( rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9));
+    font-family: 'Arsenal', sans-serif;
+    height: 100%;
+    padding:0;
+    margin:0;
+    color:rgb(180, 180, 180);
+}
+
+nav.navbar {
+    display: flex;
+    padding: 10px 16px;
+    text-decoration: none;
+}
+
+img.icon {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 6px;
+    margin-left: 15px;
+}
+
+img.main-image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 3rem;
+    border-radius: 4px;
+    max-width: 100%;
+    height: auto;
+    max-height: 800px;
+}
+
+.btn {
+    transition-duration: 0.4s;
+    padding: 20px 35px;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.btn:hover {
+    background-color: rgb(61, 72, 73);
+    color: white;
+}
+
+.deleteButton:hover {
+    background-color: rgb(90, 11, 11);
+    color: white;
+}
+
+.imageBtn {
+    background-color: rgb(39, 44, 44);
+    padding: 0px 50px;
+}
+
+h1 {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+h1.page-heading {
+    font-size: 50px;
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* Text input labels */
+label {
+    color:rgb(61, 72, 73);
+}
+
+img {
+    /* Prevent Image stretching */
+    align-self: center;
+}
+
+.imageClicked {
+    cursor: pointer;
+}
+
+/* Exhibit cards */
+.card {
+    color:rgba(27, 27, 27);
+    padding: 5px;
+    margin: 3px;
+    width: 18rem;
+}
+
+.card-img-top {
+    height: 240px;
+    overflow: hidden;
+    object-fit: cover;
+}
+
+.cardButton {
+    color: #212529;
+}
+
+/* Edit button in Artist's page */
+.editButton {
+    margin-bottom: 1vw;
+}
+
+footer.footer {
+    font-size: 15px;
+    text-align: center;
+    background-color: rgba(58, 53, 53, 0.5);
+    width: 100%;
+    margin-top: auto;
+    bottom: 0;
+}
+
+/* Modal */
+.modal-content {
+    color: rgba(27, 27, 27);
+}
+
+@media (min-width: 576px){
+    .modal-dialog-image {
+        display: inline-block;
+        max-width: 100%;
+    }
+}
+
+#imageModal {
+    max-width: 100%;
+}

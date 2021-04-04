@@ -1,0 +1,33 @@
+<h1 class="page-heading">Edit Profile</h1>
+<br>
+<form id="editUser" class="row g-3">
+  <div class="form-floating mb-3">
+    <input type="text" required id="name" class="form-control" placeholder="placeholder" name="name" value="{{user.name}}">
+    <label class="floatingInput" for="name">Name</label>
+  </div>
+
+  <div class="form-floating mb-3">
+    <input type="email" required id="email" class="form-control" placeholder="placeholder" name="email" value="{{user.email}}">
+    <label class="floatingInput" for="email">Email</label>
+  </div>
+
+  <div class="form-floating mb-3">
+    <textarea required id="bio" class="form-control" placeholder="placeholder" name="bio">{{user.bio}}</textarea>
+    <label class="floatingInput" for="bio">Bio</label>
+  </div>
+
+  <div class="form-floating mb-3">
+    <input type="text" required id="website" class="form-control" placeholder="placeholder" name="website" value="{{user.website}}">
+    <label class="floatingInput" for="website">Website</label>
+  </div>
+
+  <div class="form-floating input-group mb-3" id="uploadButton">
+    <input type="text" readonly required id="imageUrl" class="form-control" name="imageUrl" >
+    <label class="floatingInput" for="imageUrl">Profile Image</label>
+    <button type="button" class="btn btn-outline-secondary imageBtn">Upload Image</button>
+  </div>
+
+  <div class="col-12 text-center">
+    <button type="submit" id="formSubmit" data-value="{{user.id}}" class="btn btn-outline-secondary">Update</button>
+  </div>
+</form>

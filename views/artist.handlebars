@@ -1,0 +1,92 @@
+{{!-- Edit Profile button if user is the artist --}}
+{{#if privatePage }}
+<div class="d-flex flex-row-reverse editButton">
+    <a href="/editUser/{{user.id}}"><button class="btn btn-outline-secondary">Edit Profile</button></a>
+</div>
+{{/if}}
+
+{{!-- Artist's information --}}
+<div class="row">
+    <div class="col-9">
+        <h1>{{user.name}}</h1>
+        <hr>
+        <span>{{user.bio}}</span>
+        <br><br>
+        <a href="{{user.website}}" target="_blank" rel="noreferrer noopener">{{user.website}}</a>
+        <br><br>
+        <a href="mailto:{{user.email}}">{{user.email}}</a>
+    </div>
+    <img src="{{user.image_url}}" class="imageClicked col-3" data-bs-toggle="modal" data-bs-target="#imagePopup" alt="Artist's profile picture">
+</div>
+<br>
+
+{{!-- Upload new exhibit button if user is the artist --}}
+{{#if privatePage }}
+<div class="text-center">
+    <a href="/submit"><button class="btn btn-outline-secondary">Create New Exhibit</button></a>
+</div>
+<br>
+{{/if}}
+
+{{!-- All Artist's exhibits --}}
+<div class="container row justify-content-evenly">
+    {{#if privatePage }}
+    {{!-- If user is the artist, display card with edit button --}}
+    {{#each user.exhibits as |exhibit|}}
+    <div class="card text-center">
+        {{!-- Card Image --}}
+        <img src="{{image_url}}" class="card-img-top imageClicked" data-bs-toggle="modal" data-bs-target="#imagePopup" alt="{{image_url}}">
+        {{!-- Card Body --}}
+        <div class="card-body">
+            <h2 class="card-title">{{title}}</h2>
+            <p>{{size}} · {{medium}}</p>
+            <p>${{price}}</p>
+        </div>
+        <div class="row card-footer">
+        <a href="/editExhibit/{{exhibit.id}}" class="btn btn-outline-secondary cardButton col">Edit</a>
+        <button type="button" class="btn btn-outline-danger deleteButton col" data-id="{{exhibit.id}}" data-bs-toggle="modal"
+            data-bs-target="#deleteConfirm">Delete</button>
+        </div>
+    </div>
+    {{/each}}
+
+    {{else}}
+    {{!-- Else, no button --}}
+    {{#each user.exhibits as |exhibit|}}
+    <div class="card text-center">
+        {{!-- Card Image --}}
+        <img src="{{image_url}}" class="card-img-top imageClicked" data-bs-toggle="modal" data-bs-target="#imagePopup" alt="{{image_url}}">
+        {{!-- Card Body --}}
+        <div class="card-body">
+            <h2 class="card-title">{{title}}</h2>
+            <p>{{size}} · {{medium}}</p>
+            <p>${{price}}</p>
+        </div>
+    </div>
+    {{/each}}
+    {{/if}}
+</div>
+
+{{!-- Delete Confirmation Modal --}}
+<div class="modal fade" id="deleteConfirm" tabindex="-1" aria-labelledby="deleteConfirmLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title" id="deleteConfirmLabel">Confirm Delete</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Are you sure you want to delete this?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary cardButton" data-bs-dismiss="modal">Back</button>
+                <button type="button" id="confirmDelete" class="btn btn-danger deleteButton cardButton">Delete</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+{{> imagePopup }}
+
+<!-- Delete AJAX Script -->
+<script src="/js/deleteModel.js"></script>

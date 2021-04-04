@@ -1,0 +1,19 @@
+{{!-- For each exhibit within the specific gallery, make a card --}}
+<div class="container row justify-content-evenly">
+    {{#each exhibits as |exhibit|}}
+    <div class="card text-center">
+        {{!-- Card Image --}}
+        <img src="{{image_url}}" class="card-img-top imageClicked" data-bs-toggle="modal" data-bs-target="#imagePopup" alt="{{image_url}}">
+        {{!-- Card Body --}}
+        <div class="card-body">
+            <h2 class="card-title">{{title}}</h2>
+            <p>{{size}} · {{medium}}</p>
+            <p>${{price}}</p>
+        </div>
+        {{!-- Card Button --}}
+        <a href="/user/{{user.id}}" class="btn btn-outline-secondary cardButton">{{user.name}}</a>
+    </div>
+    {{/each}}
+</div>
+
+{{> imagePopup }}
